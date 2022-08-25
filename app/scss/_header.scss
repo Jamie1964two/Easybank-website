@@ -1,0 +1,36 @@
+.header {
+
+    nav {
+        padding:24px;
+    }
+
+
+    &__logo {
+
+    }
+
+    &__menu {  //mobile menu
+
+        > span {
+            display:block;
+            height:2px;
+            width:26px;
+            background-color: $darkBlue;
+            
+            &:not(:last-child) {
+                margin-bottom:3px;
+            }
+        }
+    }
+
+    &__links {
+        a {
+            color: $grayishBlue;
+            font-size: $font-sm;
+        }
+    }
+
+    &__button {
+
+    }
+}
