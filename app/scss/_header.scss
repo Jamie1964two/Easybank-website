@@ -1,11 +1,13 @@
 .header {
 
     nav {
-        padding:24px;
+        padding: 1.06rem 24px;
     }
 
 
     &__logo {
+        width: 8.8rem;
+        height:1.375rem;
 
     }
 
@@ -25,12 +27,55 @@
 
     &__links {
         a {
+            position: relative;
             color: $grayishBlue;
             font-size: $font-sm;
+            transition: color 200ms ease-in-out;
+        
+            &:not(:last-child){
+                margin-right: 2.5vw;
+            }
+
+            &::before {
+                content: "";
+                display:block;
+                position:absolute;
+                height: 0px;
+                left:0;
+                right:0;
+                bottom:-30px;
+                background: lime;
+                opacity:0;
+                transition: opacity 200ms ease-in-out;
+                transition: height 200ms ease-in-out;
+            }
+
+            &:hover {
+                color: $darkBlue;
+
+                &:before {
+                    opacity: 1;
+                    height: 5px;
+                    
+                }
+            }
+        
+
+
         }
+        
     }
 
     &__button {
+
+    }
+
+    &__cta {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+        &:hover {
+            opacity:0.75;
+        }
 
     }
 }

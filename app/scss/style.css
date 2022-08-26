@@ -43,8 +43,24 @@ button, .button {
   border: 0;
 }
 
+@media (max-width: 39.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 40em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
 .header nav {
-  padding: 24px;
+  padding: 1.06rem 24px;
+}
+.header__logo {
+  width: 8.8rem;
+  height: 1.375rem;
 }
 .header__menu > span {
   display: block;
@@ -56,6 +72,38 @@ button, .button {
   margin-bottom: 3px;
 }
 .header__links a {
+  position: relative;
   color: hsl(233deg, 8%, 62%);
   font-size: 0.875rem;
+  transition: color 200ms ease-in-out;
+}
+.header__links a:not(:last-child) {
+  margin-right: 2.5vw;
+}
+.header__links a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  background: lime;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  transition: height 200ms ease-in-out;
+}
+.header__links a:hover {
+  color: hsl(233deg, 26%, 24%);
+}
+.header__links a:hover:before {
+  opacity: 1;
+  height: 5px;
+}
+.header__cta {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+.header__cta:hover {
+  opacity: 0.75;
 }/*# sourceMappingURL=style.css.map */
