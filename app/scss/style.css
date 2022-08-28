@@ -1,3 +1,73 @@
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fade-in {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.fade-out {
+  -webkit-animation: fade-out 300ms ease-in-out forwards;
+          animation: fade-out 300ms ease-in-out forwards;
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -16,9 +86,17 @@ body {
   color: hsl(233deg, 8%, 62%);
   font-weight: 300;
 }
+body.noscroll {
+  overflow: hidden;
+}
 
 a, a:link, a:hover, a:visited {
   text-decoration: none;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .flex {
@@ -55,21 +133,41 @@ button, .button {
   }
 }
 
+.header.open .header__toggle > span:first-child {
+  transform: rotate(45deg);
+}
+.header.open .header__toggle > span:nth-child(2) {
+  opacity: 0;
+}
+.header.open .header__toggle > span:last-child {
+  transform: rotate(-45deg);
+}
+.header .overlay {
+  position: fixed;
+  top: 3.75rem;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: linear-gradient(hsl(233deg, 26%, 24%), transparent);
+}
 .header nav {
-  padding: 1.06rem 24px;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 .header__logo {
   width: 8.8rem;
   height: 1.375rem;
 }
-.header__menu > span {
+.header__toggle > span {
   display: block;
   height: 2px;
   width: 26px;
   background-color: hsl(233deg, 26%, 24%);
+  transition: all 300ms ease-in-out;
+  transform-origin: 3px 1px;
 }
-.header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+.header__toggle > span:not(:last-child) {
+  margin-bottom: 5px;
 }
 .header__links a {
   position: relative;
@@ -106,4 +204,20 @@ button, .button {
 }
 .header__cta:hover {
   opacity: 0.75;
+}
+.header__menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: hsl(0deg, 0%, 100%);
+  margin-top: 1.5rem;
+  padding: 1.625rem;
+  border-radius: 5px;
+}
+.header__menu a {
+  display: block;
+  padding: 0.625rem;
+  color: hsl(233deg, 26%, 24%);
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
