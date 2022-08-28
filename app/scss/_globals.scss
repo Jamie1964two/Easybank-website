@@ -19,6 +19,15 @@ body {
     &.noscroll {
         overflow: hidden;
     }
+
+    @include breakpoint-up(large) {
+        font-size: $font-med;
+    }
+
+}
+
+h1, h2, h3 {
+    margin-top: 0;
 }
 
 a, a:link, a:hover, a:visited {
@@ -28,8 +37,12 @@ a, a:link, a:hover, a:visited {
 // Spacing
 
 .container {
+    padding-top: 2.25rem;
     padding-left: 1.5rem;
+    padding-bottom: 2.25rem;
     padding-right: 1.5rem;
+    max-width: 69.675rem;
+    margin: 0 auto;
 }
 
 
@@ -58,6 +71,14 @@ button, .button {
     background-image: $gradient;
     color: $white;
     border: 0;
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    
+    &:hover {
+        opacity:0.75;
+    }
+
 }
 
 .hide-for-mobile {
