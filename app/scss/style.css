@@ -319,4 +319,50 @@ button:hover, .button:hover {
 .hero__text p {
   line-height: 1.5;
   margin-bottom: 2.25rem;
+}
+
+.feature {
+  background-color: hsl(220deg, 16%, 96%);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.feature h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: hsl(233deg, 26%, 24%);
+}
+.feature p {
+  padding: 0px;
+  margin: 0;
+  line-height: 1.5;
+}
+.feature__grid {
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 1.5rem;
+}
+.feature__grid > div:not(:last-child) {
+  margin-right: 2rem;
+}
+@media (min-width: 40em) {
+  .feature__grid {
+    grid-template-columns: auto auto;
+  }
+}
+@media (min-width: 64em) {
+  .feature__grid {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+.feature__icon {
+  padding: 1.5rem 0;
+}
+.feature__title {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: hsl(233deg, 26%, 24%);
+  padding-bottom: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
