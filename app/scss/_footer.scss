@@ -1,0 +1,104 @@
+.footer {
+
+    padding: 3rem 1rem;
+    background-color: $darkBlue;
+    display:flex;
+    //justify-items: center;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-areas: 
+        'logo menu1 menu2 button'
+        'social menu1 menu2 copyright';
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__logo {
+        padding-bottom: 2rem;
+        grid-area: logo;
+
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width:40%;
+        grid-area: social;
+        margin: 0 auto;
+        
+
+        @include breakpoint-up(medium){
+            width: 80%;
+        }
+
+        svg {
+            max-width: 20px;
+            max-width:20px;
+            object-fit: contain;
+            transition: fill 400ms ease-in-out;
+        }
+
+        svg:hover path{
+            fill: $limeGreen;
+        }
+        
+    }
+
+    &__menu {
+
+        p{
+        margin:0;
+        padding:0.3rem;
+        width:100%;
+        text-align: center;
+        transition: color 400ms ease-in-out;
+        }
+
+        p:hover {
+            color: $limeGreen;
+        }
+
+    }
+    
+    .menu1{
+        margin-top:1rem;
+        grid-area: menu1;
+    
+
+    @include breakpoint-up(medium){
+        margin-top:0;
+    }
+    }
+
+    .menu2{
+        margin-bottom:1rem;
+        grid-area: menu2;
+        @include breakpoint-up(medium){
+            margin-bottom:0;
+        }
+    }
+
+    &__button {
+        margin-bottom: 1rem;
+        grid-area: button;
+
+        @include breakpoint-up(medium){
+            max-width:9.5rem;
+            margin: auto;
+        }
+    }
+
+    &__copyright {
+        font-size: 0.75rem;
+        grid-area: copyright;
+        margin: auto;
+    }
+
+
+}

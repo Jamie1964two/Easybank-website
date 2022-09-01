@@ -15,6 +15,7 @@ body {
     font-size: $font-med;
     color: $grayishBlue;
     font-weight: 300;
+    overflow-x: hidden;
 
     &.noscroll {
         overflow: hidden;
@@ -28,6 +29,13 @@ body {
 
 h1, h2, h3 {
     margin-top: 0;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.15;
+    color: $darkBlue;
 }
 
 a, a:link, a:hover, a:visited {
@@ -73,10 +81,24 @@ button, .button {
     border: 0;
     display: inline-block;
     opacity: 1;
-    transition: opacity 300ms ease-in-out;
+    position: relative;
     
-    &:hover {
-        opacity:0.75;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 25px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255,255,255,0.25);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+    }
+    
+    &:hover::before {
+        opacity: 1;
     }
 
 }

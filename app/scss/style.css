@@ -85,6 +85,7 @@ body {
   font-size: 1.125rem;
   color: hsl(233deg, 8%, 62%);
   font-weight: 300;
+  overflow-x: hidden;
 }
 body.noscroll {
   overflow: hidden;
@@ -97,6 +98,13 @@ body.noscroll {
 
 h1, h2, h3 {
   margin-top: 0;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: hsl(233deg, 26%, 24%);
 }
 
 a, a:link, a:hover, a:visited {
@@ -133,10 +141,22 @@ button, .button {
   border: 0;
   display: inline-block;
   opacity: 1;
+  position: relative;
+}
+button::before, .button::before {
+  content: "";
+  position: absolute;
+  border-radius: 25px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
-button:hover, .button:hover {
-  opacity: 0.75;
+button:hover::before, .button:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 39.9375em) {
@@ -261,6 +281,7 @@ button:hover, .button:hover {
     flex: 3;
     order: 2;
     height: 100%;
+    width: 60vw;
     min-height: 41rem;
     background-image: url("/images/bg-intro-desktop.svg");
     background-size: 130%;
@@ -277,6 +298,8 @@ button:hover, .button:hover {
   background-size: 93%;
   background-repeat: no-repeat;
   background-position: center bottom;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 40em) {
   .hero__image::after {
@@ -326,12 +349,6 @@ button:hover, .button:hover {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
-.feature h2 {
-  font-weight: 300;
-  font-size: 2rem;
-  line-height: 1.15;
-  color: hsl(233deg, 26%, 24%);
-}
 .feature p {
   padding: 0px;
   margin: 0;
@@ -365,4 +382,140 @@ button:hover, .button:hover {
   line-height: 1.15;
   color: hsl(233deg, 26%, 24%);
   padding-bottom: 1.5rem;
+}
+.latest {
+  background-color: hsl(0deg, 0%, 98%);
+}
+.latest__flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+.latest__item {
+  background-color: hsl(0deg, 0%, 100%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex: 1 1 100%;
+  width: 100px;
+  transition: all 150ms ease-in-out;
+}
+@media (min-width: 40em) {
+  .latest__item {
+    flex-basis: 40%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+@media (min-width: 64em) {
+  .latest__item {
+    flex-basis: 20%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+.latest__item:hover {
+  transform: scale(1.02);
+}
+.latest__image {
+  aspect-ratio: 3/2;
+  border-radius: 0.625rem 0.65rem 0 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+.latest__info {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.latest__author {
+  font-size: 0.875rem;
+}
+.footer {
+  padding: 3rem 1rem;
+  background-color: hsl(233deg, 26%, 24%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 40em) {
+  .footer {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: "logo menu1 menu2 button" "social menu1 menu2 copyright";
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer__logo {
+  padding-bottom: 2rem;
+  grid-area: logo;
+}
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  grid-area: social;
+  margin: 0 auto;
+}
+@media (min-width: 40em) {
+  .footer__social {
+    width: 80%;
+  }
+}
+.footer__social svg {
+  max-width: 20px;
+  max-width: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: fill 400ms ease-in-out;
+}
+.footer__social svg:hover path {
+  fill: hsl(136deg, 65%, 51%);
+}
+.footer__menu p {
+  margin: 0;
+  padding: 0.3rem;
+  width: 100%;
+  text-align: center;
+  transition: color 400ms ease-in-out;
+}
+.footer__menu p:hover {
+  color: hsl(136deg, 65%, 51%);
+}
+.footer .menu1 {
+  margin-top: 1rem;
+  grid-area: menu1;
+}
+@media (min-width: 40em) {
+  .footer .menu1 {
+    margin-top: 0;
+  }
+}
+.footer .menu2 {
+  margin-bottom: 1rem;
+  grid-area: menu2;
+}
+@media (min-width: 40em) {
+  .footer .menu2 {
+    margin-bottom: 0;
+  }
+}
+.footer__button {
+  margin-bottom: 1rem;
+  grid-area: button;
+}
+@media (min-width: 40em) {
+  .footer__button {
+    max-width: 9.5rem;
+    margin: auto;
+  }
+}
+.footer__copyright {
+  font-size: 0.75rem;
+  grid-area: copyright;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

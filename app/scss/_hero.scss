@@ -10,7 +10,8 @@
     }
 
     &__image {
-
+        //overflow-x: hidden;
+        // overflow-y:visible;
         position:relative;
         background-image: url('/images/bg-intro-mobile.svg');
         background-size: cover;
@@ -27,6 +28,8 @@
             flex: 3;
             order: 2;
             height: 100%;
+            width: 60vw;
+           // overflow:hidden;
             min-height: 41rem;
             background-image: url('/images/bg-intro-desktop.svg');
             background-size: 130%;
@@ -43,6 +46,7 @@
             background-size: 93%;
             background-repeat: no-repeat;
             background-position: center bottom;
+            object-fit: cover;
 
             @include breakpoint-up(medium){
                 background-size: 50%;
@@ -55,6 +59,8 @@
             background-repeat: no-repeat;
             left: 22%;
             background-position: center 150%;
+            // overflow-x: hidden;
+
             }
 
         }
