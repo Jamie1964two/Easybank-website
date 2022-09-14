@@ -41,6 +41,7 @@
             content: "";
             position: absolute;
             width: 100%;
+            max-width: 845px;
             height: 100%;
             background-image: url('/images/image-mockups.png');
             background-size: 93%;
@@ -58,9 +59,8 @@
             background-size: 94%;
             background-repeat: no-repeat;
             left: 22%;
-            background-position: center 150%;
+            background-position: center 99%;
             // overflow-x: hidden;
-
             }
 
         }
